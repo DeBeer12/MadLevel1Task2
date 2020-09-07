@@ -5,23 +5,26 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.level1task2.databinding.ActivityMainBinding
+
+private lateinit var binding: ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val btnSubmit = findViewById<Button>(R.id.btnSubmit)
+        val btnSubmit = binding.btnSubmit
         btnSubmit.setOnClickListener {
             checkAnswers()
         }
     }
 
     fun checkAnswers(){
-        val answer1 = findViewById<EditText>(R.id.insAnswer1).text.trim().toString()
-        val answer2 = findViewById<EditText>(R.id.insAnswer2).text.trim().toString()
-        val answer3 = findViewById<EditText>(R.id.insAnswer3).text.trim().toString()
-        val answer4 = findViewById<EditText>(R.id.insAnswer4).text.trim().toString()
+        val answer1 = binding.insAnswer1.text.trim().toString()
+        val answer2 = binding.insAnswer2.text.trim().toString()
+        val answer3 = binding.insAnswer3.text.trim().toString()
+        val answer4 = binding.insAnswer4.text.trim().toString()
         var correct = 0
         var wrong = 0
 
